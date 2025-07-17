@@ -647,7 +647,7 @@
                         @endif
                     </ul>
                 </li>
-            @endif
+            @endif 
             @if (\Auth::user()->role_id != 5)
                 @if (!config('database.connections.saleprosaas_landlord'))
                     <li><a href="{{ url('addon-list') }}" id="addon-list"> <i

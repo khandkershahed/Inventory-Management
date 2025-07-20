@@ -29,6 +29,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // Schema::defaultStringLength(191);
-        // $this->app->bind(\App\ViewModels\ISmsModel::class,\App\ViewModels\SmsModel::class);
+        $this->app->bind(\App\ViewModels\ISmsModel::class,\App\ViewModels\SmsModel::class);
     }
 }

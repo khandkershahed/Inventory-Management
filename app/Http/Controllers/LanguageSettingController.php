@@ -69,9 +69,9 @@ class LanguageSettingController extends Controller
 
     public function store(LanguageRequest $request)
     {
-        if (!env('USER_VERIFIED')) {
-            return redirect()->back()->with(['error' => 'This feature is disabled for demo!']);
-        }
+        // if (!env('USER_VERIFIED')) {
+        //     return redirect()->back()->with(['error' => 'This feature is disabled for demo!']);
+        // }
 
         $this->translation->addLanguage($request->locale, $request->name);
 
@@ -89,11 +89,11 @@ class LanguageSettingController extends Controller
 
     public function languageDelete(Request $request)
     {
-        if (!env('USER_VERIFIED')) {
-            session()->flash('message', 'This feature is disabled for demo!');
-            session()->flash('type', 'danger');
-            return response()->json('error');
-        }
+        // if (!env('USER_VERIFIED')) {
+        //     session()->flash('message', 'This feature is disabled for demo!');
+        //     session()->flash('type', 'danger');
+        //     return response()->json('error');
+        // }
 
         $path = base_path('resources/lang/' . $request->langVal);
         if (File::exists($path)) {

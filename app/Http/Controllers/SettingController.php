@@ -37,7 +37,7 @@ class SettingController extends Controller
 
     public function emptyDatabase()
     {
-        
+
         //clearing all the cached queries
         $this->cacheForget('biller_list');
         $this->cacheForget('brand_list');
@@ -152,7 +152,7 @@ class SettingController extends Controller
 
     public function superadminGeneralSettingStore(Request $request)
     {
-        
+
 
         $this->validate($request, [
             'site_logo' => 'image|mimes:jpg,jpeg,png,gif|max:100000',
@@ -234,7 +234,7 @@ class SettingController extends Controller
 
     public function superadminMailSettingStore(Request $request)
     {
-        
+
 
         $data = $request->all();
         $mail_setting = MailSetting::latest()->first();
@@ -275,7 +275,7 @@ class SettingController extends Controller
 
     public function backup()
     {
-        
+
 
         // Database configuration
         $host = env('DB_HOST');
@@ -386,7 +386,7 @@ class SettingController extends Controller
 
     public function mailSettingStore(Request $request)
     {
-        
+
 
         $data = $request->all();
         $mail_setting = MailSetting::latest()->first();
@@ -478,7 +478,7 @@ class SettingController extends Controller
 
     public function smsSettingStore(Request $request)
     {
-        
+
 
         $data = $request->all();
 
@@ -610,11 +610,11 @@ class SettingController extends Controller
 
     public function gatewayUpdate(Request $request)
     {
-        if (!env('USER_VERIFIED')) {
-            Session::flash('message', 'This feature is disabled for demo!');
-            Session::flash('type', 'error');
-            return redirect()->back();
-        }
+        // if (!env('USER_VERIFIED')) {
+        //     Session::flash('message', 'This feature is disabled for demo!');
+        //     Session::flash('type', 'error');
+        //     return redirect()->back();
+        // }
 
         // Fetch all payment gateways from the database
         $gateways = DB::table('external_services')->where('type', 'payment')->get();
@@ -707,7 +707,7 @@ class SettingController extends Controller
 
     public function posSettingStore(Request $request)
     {
-        
+
 
         $data = $request->all();
 

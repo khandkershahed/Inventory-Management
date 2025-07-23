@@ -647,8 +647,8 @@
                         @endif
                     </ul>
                 </li>
-            @endif 
-            @if (\Auth::user()->role_id != 5)
+            @endif
+            {{-- @if (\Auth::user()->role_id != 5)
                 @if (!config('database.connections.saleprosaas_landlord'))
                     <li><a href="{{ url('addon-list') }}" id="addon-list"> <i
                                 class="dripicons-flag"></i><span>{{ trans('file.Addons') }}</span></a></li>
@@ -665,7 +665,7 @@
                         </ul>
                     </li>
                 @endif
-            @endif
+            @endif --}}
             <li><a href="#setting" aria-expanded="false" data-toggle="collapse"> <i
                         class="dripicons-gear"></i><span>{{ trans('file.settings') }}</span></a>
                 <ul id="setting" class="collapse list-unstyled ">

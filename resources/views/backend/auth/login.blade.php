@@ -59,7 +59,7 @@
                         <strong>{{ session()->get('error') }}</strong>
                     </p>
                 @endif
-              </div>
+              </div> 
 
               <div class="form-group-material">
                 <input id="login-password" type="password" name="password" required class="input-material" value="">

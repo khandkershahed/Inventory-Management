@@ -49,7 +49,7 @@ class ClientAutoUpdateController extends Controller
     /*
     |============================================================================================================
     | matchFilesFromServerBeforeExecute() -> from server it will be match with fetch-data-upgrade.json and fetch-data-bug.json file. And Check all Before Execute Files
-    | fileTransferProcess() -> it will send files from salepropos.com server to client setver
+    | fileTransferProcess() -> it will send files from ngensoftware.com server to client setver
     |============================================================================================================
     */
 
@@ -60,11 +60,11 @@ class ClientAutoUpdateController extends Controller
 
         if($action_type =='version_upgrade'){
             $message = 'Version Upgraded Successfully !!!';
-            $base_url = 'https://salepropos.com/version_upgrade_files/'; //$this->version_upgrade_base_url;
+            $base_url = 'https://ngensoftware.com/version_upgrade_files/'; //$this->version_upgrade_base_url;
             $getFilesAndLogsDetail = $this->getVersionUpgradeDetails();
         }else if($action_type == 'bug_update') {
             $message = 'Updated successfully';
-            $base_url = 'https://salepropos.com/bug_update_files/'; //$this->bug_update_base_url;
+            $base_url = 'https://ngensoftware.com/bug_update_files/'; //$this->bug_update_base_url;
             $getFilesAndLogsDetail = $this->getBugUpdateDetails();
         }
 
